@@ -52,7 +52,7 @@
 							<img src="{{p.image1.url}}" style="height: 130px">
 							<small style="display: block;">{{p.product_name|truncatechars:15}}</small>
 							<small class="item-price">
-								<span><i class="fa fa-inr" aria-hidden="true"></i>{{p.price}}</span>
+								<span><i class="fa fa-try" aria-hidden="true"></i>{{p.price}}</span>
 							</small>
 						</a>
 					</div>
@@ -96,7 +96,7 @@
 								<div class="thumb-content">
 									<b><a href="{% url 'SalerProductView' i.product_id %}" style="text-decoration: none; color: #231f20">
 											{{i.product_name}}</a></b>
-									<p class="item-price"><span><i class="fa fa-inr"
+									<p class="item-price"><span><i class="fa fa-try"
 												aria-hidden="true"></i>{{i.price}}</span></p>
 
 									<a id="{{i.product_id}}" class="btn btn-primary add_to_cart">Add to Cart</a>

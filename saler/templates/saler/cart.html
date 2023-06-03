@@ -67,7 +67,7 @@
                   </div>
                 </div>
               </th>
-              <td class="border-0 align-middle"><strong><i class="fa fa-inr"
+              <td class="border-0 align-middle"><strong><i class="fa fa-try"
                     aria-hidden="true"></i>{{prod.price}}</strong></td>
               <td class="border-0 align-middle"><i class="fa fa-plus-square plus_prod" product_id={{prod.product_id}}
                   aria-hidden="true"></i> <strong>{{cprod.number}}</strong> <i class="fa fa-minus-square minus_prod"
@@ -87,13 +87,13 @@
 
         <ul class="list-unstyled mb-4">
           <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal
-            </strong><strong id="subtotal"><i class="fa fa-inr" aria-hidden="true"></i>{{subtotal}}</strong></li>
+            </strong><strong id="subtotal"><i class="fa fa-try" aria-hidden="true"></i>{{subtotal}}</strong></li>
           <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Shipping and
-              handling</strong><strong id="delev"><i class="fa fa-inr" aria-hidden="true"></i>{{delev}}</strong></li>
+              handling</strong><strong id="delev"><i class="fa fa-try" aria-hidden="true"></i>{{delev}}</strong></li>
           <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tax</strong><strong
-              id="tax"><i class="fa fa-inr" aria-hidden="true"></i>{{tax}}</strong></li>
+              id="tax"><i class="fa fa-try" aria-hidden="true"></i>{{tax}}</strong></li>
           <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
-            <h5 class="font-weight-bold" id="total"><i class="fa fa-inr" aria-hidden="true"></i>{{total}}</h5>
+            <h5 class="font-weight-bold" id="total"><i class="fa fa-try" aria-hidden="true"></i>{{total}}</h5>
           </li>
         </ul><a href="{% url 'checkout' %}" class="btn btn-dark rounded-pill py-2 btn-block">Procceed to checkout</a>
       </div>
@@ -117,10 +117,10 @@
         },
         success: function (data) {
           $('#cart_no').text(data.len);
-          document.getElementById('subtotal').innerHTML = `<i class="fa fa-inr" aria-hidden="true"></i>${data.subtotal}`;
-          document.getElementById('total').innerHTML = `<i class="fa fa-inr" aria-hidden="true"></i>${data.total}`;
-          document.getElementById('tax').innerHTML = `<i class="fa fa-inr" aria-hidden="true"></i>${data.tax}`;
-          document.getElementById('delev').innerHTML = `<i class="fa fa-inr" aria-hidden="true"></i>${data.delev}`;
+          document.getElementById('subtotal').innerHTML = `<i class="fa fa-try" aria-hidden="true"></i>${data.subtotal}`;
+          document.getElementById('total').innerHTML = `<i class="fa fa-try" aria-hidden="true"></i>${data.total}`;
+          document.getElementById('tax').innerHTML = `<i class="fa fa-try" aria-hidden="true"></i>${data.tax}`;
+          document.getElementById('delev').innerHTML = `<i class="fa fa-try" aria-hidden="true"></i>${data.delev}`;
           document.getElementById(catid).parentNode.parentNode.parentNode.removeChild(document.getElementById(catid).parentNode.parentNode);
 
         }
@@ -143,10 +143,10 @@
         },
         success: function (data) {
           eml.innerText = data.num;
-          document.getElementById('subtotal').innerHTML = `<i class="fa fa-inr" aria-hidden="true"></i>${data.subtotal}`;
-          document.getElementById('total').innerHTML = `<i class="fa fa-inr" aria-hidden="true"></i>${data.total}`;
-          document.getElementById('tax').innerHTML = `<i class="fa fa-inr" aria-hidden="true"></i>${data.tax}`;
-          document.getElementById('delev').innerHTML = `<i class="fa fa-inr" aria-hidden="true"></i>${data.delev}`;
+          document.getElementById('subtotal').innerHTML = `<i class="fa fa-try" aria-hidden="true"></i>${data.subtotal}`;
+          document.getElementById('total').innerHTML = `<i class="fa fa-try" aria-hidden="true"></i>${data.total}`;
+          document.getElementById('tax').innerHTML = `<i class="fa fa-try" aria-hidden="true"></i>${data.tax}`;
+          document.getElementById('delev').innerHTML = `<i class="fa fa-try" aria-hidden="true"></i>${data.delev}`;
         }
       })
   });
@@ -168,10 +168,10 @@
         },
         success: function (data) {
           eml.innerText = data.num;
-          document.getElementById('subtotal').innerHTML = `<i class="fa fa-inr" aria-hidden="true"></i>${data.subtotal}`;
-          document.getElementById('total').innerHTML = `<i class="fa fa-inr" aria-hidden="true"></i>${data.total}`;
-          document.getElementById('tax').innerHTML = `<i class="fa fa-inr" aria-hidden="true"></i>${data.tax}`;
-          document.getElementById('delev').innerHTML = `<i class="fa fa-inr" aria-hidden="true"></i>${data.delev}`;
+          document.getElementById('subtotal').innerHTML = `<i class="fa fa-try" aria-hidden="true"></i>${data.subtotal}`;
+          document.getElementById('total').innerHTML = `<i class="fa fa-try" aria-hidden="true"></i>${data.total}`;
+          document.getElementById('tax').innerHTML = `<i class="fa fa-try" aria-hidden="true"></i>${data.tax}`;
+          document.getElementById('delev').innerHTML = `<i class="fa fa-try" aria-hidden="true"></i>${data.delev}`;
         }
       })
   });

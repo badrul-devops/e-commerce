@@ -40,7 +40,7 @@
 	        <p class="card-text m-0"><b>size: {{ord.size}}</b> <b style="float: right;">Quantity: {{ord.size}}</b></p>
 	         {% for item in ord.products|split:',' %}
 	        {% if item|product:'|'|slice:'0:1'|remfl:'2'%}
-	        <p class="card-text"><small class="text-muted">Price: <i class="fa fa-inr" aria-hidden="true"></i>{{item|product:'|'|slice:'2:3'|remfl:'1'}}</small></p>
+	        <p class="card-text"><small class="text-muted">Price: <i class="fa fa-try" aria-hidden="true"></i>{{item|product:'|'|slice:'2:3'|remfl:'1'}}</small></p>
 	         {% endif %}
 	      	{% endfor %}
 	        <div style="float: right;">
@@ -100,7 +100,7 @@
 	        <p class="card-text m-0"><b>size: {{ord.size}}</b> <b style="float: right;">Quantity: {{ord.size}}</b></p>
 	         {% for item in ord.products|split:',' %}
 	        {% if item|product:'|'|slice:'0:1'|remfl:'2'%}
-	        <p class="card-text"><small class="text-muted">Price: <i class="fa fa-inr" aria-hidden="true"></i>{{item|product:'|'|slice:'2:3'|remfl:'1'}}</small></p>
+	        <p class="card-text"><small class="text-muted">Price: <i class="fa fa-try" aria-hidden="true"></i>{{item|product:'|'|slice:'2:3'|remfl:'1'}}</small></p>
 	         {% endif %}
 	      	{% endfor %}
 	            </div>
