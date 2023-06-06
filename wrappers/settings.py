@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'main',
     'saler',
     'coupon',
-    'bootstrap4',
 ]
 
 MIDDLEWARE = [

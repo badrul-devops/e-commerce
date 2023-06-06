@@ -238,59 +238,45 @@
     	document.getElementById('select_bgcolor').value = hex;
     </script>
     <script>
-      $(document).on('change',"#id_gst_Number", function(){
-        var inputvalues = $(this).val();
-        var gstinformat = new RegExp('^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$');
+		$(document).on('change', '#id_nid_number', function() {
+			var inputValues = $(this).val();
+			var nidFormat = new RegExp('^[0-9]{13}$');
+		
+			if (nidFormat.test(inputValues)) {
+				return true;
+			} else {
+				alert('Please enter a valid NID number');
+				$("#id_nid_number").val('');
+				$("#id_nid_number").focus();
+			}
+		});
+		
+		$(document).on('change', '#id_mobile', function() {
+			var inputValues = $(this).val();
+			var mobileFormat = new RegExp("^[0-9]{11}$");
 
-        if (gstinformat.test(inputvalues)) {
-         return true;
-        } else {
-            alert('Please Enter Valid GSTIN Number');
-            $("#id_gst_Number").val('');
-            $("#id_gst_Number").focus();
-        }
+			if (mobileFormat.test(inputValues)) {
+				return true;
+			} else {
+				alert('Please enter a valid mobile number');
+				$("#id_mobile").val('');
+				$("#id_mobile").focus();
+			}
+});
 
-    });
-
-      $("#id_ifsc_Code").change(function () {      
-		var inputvalues = $(this).val();      
-		  var reg = /[A-Z|a-z]{4}[0][a-zA-Z0-9]{6}$/;    
-		                if (inputvalues.match(reg)) {    
-		                    return true;    
-		                }    
-		                else {    
-		                     $("#id_ifsc_Code").val("");    
-		                    alert("You entered invalid IFSC code");    
-		                    //document.getElementById("txtifsc").focus();    
-		                    return false;    
-		                }    
-		});   
-
-      $(document).on('change',"#id_mobile", function(){
-        var inputvalues = $(this).val();
-        var gstinformat = new RegExp("^[6-9][0-9]{9}$");
-
-        if (gstinformat.test(inputvalues)) {
-         return true;
-        } else {
-            alert('Please Enter Valid Mobile Number');
-            $("#id_mobile").val('');
-            $("#id_mobile").focus();
-        }
-
-    });
-      $(document).on('change',"#id_alternate_mobile", function(){
-        var inputvalues = $(this).val();
-        var gstinformat = new RegExp("^[6-9][0-9]{9}$");
-
-        if (gstinformat.test(inputvalues)) {
-         return true;
-        } else {
-            alert('Please Enter Valid Mobile Number');
-            $("#id_alternate_mobile").val('');
-            $("#id_alternate_mobile").focus();
-        }
-
-    });
-    </script>
+		
+		$(document).on('change', '#id_alternate_mobile', function() {
+			var inputValues = $(this).val();
+			var mobileFormat = new RegExp("^[0-9]{11}$");
+		
+			if (mobileFormat.test(inputValues)) {
+				return true;
+			} else {
+				alert('Please enter a valid mobile number');
+				$("#id_alternate_mobile").val('');
+				$("#id_alternate_mobile").focus();
+			}
+		});
+		</script>
+		
 {% endblock saler_body %}

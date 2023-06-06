@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
 <link rel="stylesheet" href="{% static 'saler/css/home_style.css' %}">
-<title>Wrappers|Dashboard </title>
+<title>Grameen Shilpo|Dashboard </title>
 
 {% endblock saler_head %}
 {% block saler_body %}
@@ -17,6 +17,7 @@
 	<div style="text-align: center;" class="pb-1">
 	<a href="#" style="text-align: center;" class="btn btn-success" onclick="document.getElementById('odrs').style.display='block'; document.getElementById('dodrs').style.display='none';">View Orders</a>
 	<a href="#" style="text-align: center;" class="btn btn-success" onclick="document.getElementById('odrs').style.display='none'; document.getElementById('dodrs').style.display='block';">View All Delivered Products</a>
+	
 	</div>
 	<div id="odrs">
 	{% for ord in orders %}
@@ -110,9 +111,12 @@
 	{% endfor %}
 	</div>
 </div>
+
 {% endblock saler_body %}
 
 {% block saler_js %}
 	
-
 {% endblock saler_js %}
+
+
+

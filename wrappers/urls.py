@@ -6,8 +6,8 @@ from django.contrib.auth import views as auth_views
 from saler.views import admin2
 
 urlpatterns = [
-    path('wrappers/my/admin/pannel/home/', admin.site.urls),
-    path('wrappers/my/admin/pannel/admin20/', admin2, name = 'admin2'),
+    path('wrappers/india/my/admin/pannel/home/', admin.site.urls),
+    path('wrappers/india/my/admin/pannel/admin20/', admin2, name = 'admin2'),
     path('', include('main.urls')),
     path('seller/', include('saler.urls')),
     path("login/", auth_views.LoginView.as_view(template_name='main/login.html', redirect_authenticated_user=True), name="login"),

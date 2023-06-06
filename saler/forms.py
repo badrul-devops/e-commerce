@@ -8,7 +8,7 @@ class SalerRegisterForm(UserCreationForm):
 	first_name = forms.CharField(widget=forms.TextInput(attrs={}))
 	last_name = forms.CharField(widget=forms.TextInput(attrs={}))
 	username = forms.CharField(label=("Mobile Number/Email"),widget=forms.TextInput(attrs={'oninput':'validate()'}))
-	gst = forms.CharField(label=("GST Number"),widget=forms.TextInput(attrs={}))
+	gst = forms.CharField(label=("NID Number"),widget=forms.TextInput(attrs={}))
 	shop = forms.CharField(label=("Company/Shop Name"),widget=forms.TextInput(attrs={}))
 	password1 = forms.CharField(label=("Password"), strip=False, widget=forms.PasswordInput(attrs={}),)
 	password2  = forms.CharField(label=("Confirm"), strip=False, widget=forms.PasswordInput(attrs={}),)
