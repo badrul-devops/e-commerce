@@ -1,22 +1,34 @@
-# Use an official Python runtime as the base image
-FROM python:3.9
+# Stage 1: Build stage
+FROM python:3.9 as builder
+
+WORKDIR /app
+
+# Copy and install Python dependencies
+COPY requirements.txt .
+RUN pip install --user --no-cache-dir -r requirements.txt
+
+# Copy the Django project code
+COPY . .
+
+
+
+# Stage 2: Production stage
+FROM python:3.9-slim
+
+WORKDIR /app
+
+# Copy the installed Python dependencies from the builder stage
+COPY --from=builder /root/.local /root/.local
 
 # Set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+ENV PATH=/root/.local/bin:$PATH
+ENV PYTHONUNBUFFERED=1
 
-# Set the working directory in the container
-WORKDIR /code
+# Copy the Django project code and collected static files
+COPY --from=builder /app .
 
-# Install dependencies
-COPY requirements.txt /code/
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy the project code to the container
-COPY . /code/
-
-# Expose the Django development server port
+# Expose the Django development server port (change it if needed)
 EXPOSE 8000
 
-# Run the Django development server
+# Start the Django development server
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

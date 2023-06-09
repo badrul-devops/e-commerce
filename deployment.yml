@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Grameenshilpo
+  labels:
+    app: Grameenshilpo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: Grameenshilpo
+  template:
+    metadata:
+      labels:
+        app: Grameenshilpo
+    spec:
+      containers:
+      - name: Grameenshilpo
+        image: badrul11/gramen-shilpo:latest
+        ports:
+        - containerPort: 8000
